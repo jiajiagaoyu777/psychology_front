@@ -13,11 +13,74 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+   
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('../views/RegisterView.vue')
+  },
+  {
+    path: '/adminIndex',
+    name: 'adminIndex',
+    component: () => import('../views/AdminIndexView.vue')
+  },
+  {
+    path: '/adminChangePwd',
+    name: 'adminChangePwd',
+    component: () => import('../views/AdminChangePwdView.vue')
+  },
+  {
+    path: '/adminUploadAvatar',
+    name: 'adminUploadAvatar',
+    component: () => import('../views/AdminUploadAvatarView.vue')
+  },
+  {
+    path: '/doctorIndex',
+    name: 'doctorIndex',
+    component: () => import('../views/DoctorIndexView.vue')
+  },
+  {
+    path: '/doctorChangePwd',
+    name: 'doctorChangePwd',
+    component: () => import('../views/DoctorChangePwdView.vue')
+  },
+  {
+    path: '/doctorUploadAvatar',
+    name: 'doctorUploadAvatar',
+    component: () => import('../views/DoctorUploadAvatarView.vue')
+  },
+  {
+    path: '/patientIndex',
+    name: 'patientIndex',
+    component: () => import('../views/PatientIndexView.vue')
+  },
+  {
+    path: '/patientChangePwd',
+    name: 'patientChangePwd',
+    component: () => import('../views/PatientChangePwdView.vue')
+  },
+  {
+    path: '/patientUploadAvatar',
+    name: 'patientUploadAvatar',
+    component: () => import('../views/PatientUploadAvatarView.vue')
+  },
+  {
+    path: '/scaleManage',
+    name: 'scaleManage',
+    component: () => import('../views/ScaleManageView.vue')
+  },
+  {
+    path: '/questionManage',
+    name: 'questionManage',
+    component: () => import('../views/QuestionManageView.vue')
+  },
 ]
 
 const router = new VueRouter({
