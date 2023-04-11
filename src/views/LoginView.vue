@@ -128,7 +128,11 @@ export default {
 					alert("医生身份尚未审核通过，请等待身份认证成功后再重新登陆")
 					this.$router.push('/login');
 				}else if(response.data.code==200){
-					alert("登录成功");
+					this.$message({
+          				showClose: true,
+          				message: '医生登录成功',
+          				type: 'success'
+        			});
 					localStorage.setItem("doctorInfo",JSON.stringify(response.data.data))//把登录的用户数据保存到浏览器的f12里的application里的LocalStorage里面
 					this.$router.push('/doctorIndex');
 				}else{
@@ -149,7 +153,11 @@ export default {
 			).then((response)=>{
 				console.log(response.data);
 				if(response.data.code==200){
-					alert("登录成功");
+					this.$message({
+          				showClose: true,
+          				message: '患者登录成功',
+          				type: 'success'
+        			});
 					localStorage.setItem("patientInfo",JSON.stringify(response.data.data))//把登录的用户数据保存到浏览器的f12里的application里的LocalStorage里面
 					
 					this.$router.push('/patientIndex');
