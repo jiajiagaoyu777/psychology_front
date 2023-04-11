@@ -105,7 +105,7 @@ export default {
       },
       uploadPatientAvatar(){
         this.axios({
-          url:this.$store.state.baseUrl+"/patient/changeAvatar",
+          url:"/api"+"/patient/changeAvatar",
           method:"POST",
           data:
             this.fileObj
@@ -116,7 +116,7 @@ export default {
         }).then((res)=>{
           console.log(res.data)
           if(res.data.code==200){
-            this.imgAvatar= this.$store.state.baseUrl+ res.data.data
+            this.imgAvatar= "/api"+ res.data.data
             //取出缓存中的头像
             var obj=JSON.parse(localStorage.getItem("patientInfo"))
             obj.patient_avatar=res.data.data
@@ -130,7 +130,7 @@ export default {
     created(){
       //下面是个三元式：如果缓存里的头像存在就用缓存里的头像，否则就用默认的头像
       this.imgAvatar= JSON.parse(localStorage.getItem("patientInfo")).patient_avatar 
-      ? this.$store.state.baseUrl+JSON.parse(localStorage.getItem("patientInfo")).patient_avatar 
+      ? "/api"+JSON.parse(localStorage.getItem("patientInfo")).patient_avatar 
       : require("../assets/images/index/user.jpg")
     }
 };

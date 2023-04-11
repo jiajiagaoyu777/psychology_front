@@ -69,7 +69,7 @@ export default {
     name: "RegisterView",
     methods:{
         doDoctorReg(){
-            this.axios.post("http://localhost:8080/doctor/reg",{
+            this.axios.post("/api/doctor/reg",{
                 doctor_name:this.username,
                 doctor_pwd:this.pwd,
 				certificate:this.certificate,
@@ -85,7 +85,7 @@ export default {
             });            
         },
 		doPatientReg(){
-            this.axios.post("http://localhost:8080/patient/reg",{
+            this.axios.post("/api/patient/reg",{
                 patient_name:this.username,
                 patient_pwd:this.pwd,				
             }).then((response)=>{

@@ -87,7 +87,7 @@ export default {
 		},
 		doAdminLogin(){
 			this.axios({
-				url:"http://43.143.82.82/:8080/admin/login",
+				url:"/api/admin/login",
 				method:"POST",
 				headers:{'content-Type':"application/x-www-form-urlencoded"},
 				data:qs.stringify({
@@ -109,7 +109,7 @@ export default {
 		},
 		doDoctorLogin(){
 			this.axios({
-				url:"http://localhost:8080/doctor/login",
+				url:"/api/doctor/login",
 				method:"POST",
 				headers:{'content-Type':"application/x-www-form-urlencoded"},
 				data:qs.stringify({
@@ -133,7 +133,7 @@ export default {
 		},
 		doPatientLogin(){
 			this.axios({
-				url:"http://localhost:8080/patient/login",
+				url:"/api/patient/login",
 				method:"POST",
 				headers:{'content-Type':"application/x-www-form-urlencoded"},
 				data:qs.stringify({

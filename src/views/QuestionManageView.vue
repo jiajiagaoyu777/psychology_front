@@ -176,7 +176,7 @@
                 alert("因子名不能为空")
             }else{
                     this.axios({
-                    url:"http://localhost:8080/factor/create",
+                    url:"/api/factor/create",
                     method:"POST",
                     headers:{'content-Type':"application/json"},
                     // headers:{'content-Type':"application/x-www-form-urlencoded"},
@@ -205,7 +205,7 @@
                 alert("题干不能为空")
             }else{
                     this.axios({
-                    url:"http://localhost:8080/question/create",
+                    url:"/api/question/create",
                     method:"POST",
                     headers:{'content-Type':"application/json"},
                     // headers:{'content-Type':"application/x-www-form-urlencoded"},
@@ -229,32 +229,32 @@
         // deleteQuestion(row){
 
         // },
-        /** 添加一行键值对 */
-addExtraInput() {
-  this.extraList.push({ 'key': '', 'value': '' })
-},
+                /** 添加一行键值对 */
+        addExtraInput() {
+          this.extraList.push({ 'key': '', 'value': '' })
+        },
 
-/** 根据数组索引删除一行键值对 */
-delExtraInput(index) {
-  this.extraList.splice(index, 1)
-},
+        /** 根据数组索引删除一行键值对 */
+        delExtraInput(index) {
+          this.extraList.splice(index, 1)
+        },
 
-/** 将参数列表提取出来 转换为对象形式 */
-extraListToData() {
-  let extraList = this.extraList
-  if (!extraList || extraList.length < 1) {
-    return {}
-  }
-  let extraData = {}
-  for (let item of extraList) {
-    let key = item.key
-    let value = item.value
-    if (key && value) {
-      extraData[key] = value
-    }
-  }
-  return extraData
-},
+        /** 将参数列表提取出来 转换为对象形式 */
+        extraListToData() {
+          let extraList = this.extraList
+          if (!extraList || extraList.length < 1) {
+            return {}
+          }
+          let extraData = {}
+          for (let item of extraList) {
+            let key = item.key
+            let value = item.value
+            if (key && value) {
+              extraData[key] = value
+            }
+          }
+          return extraData
+        },
 
 
     //   clickBtn(){
@@ -304,7 +304,7 @@ extraListToData() {
             console.log(this.scale_id)
 
             this.axios({
-				url:"http://localhost:8080/factor/getAllFactor",
+				url:"/api/factor/getAllFactor",
 				method:"GET",
                 headers:{'content-Type':"application/json"},
 			}).then((response)=>{
@@ -317,7 +317,7 @@ extraListToData() {
 			});
 
             this.axios({
-				url:"http://localhost:8080/question/getAllQuestion",
+				url:"/api/question/getAllQuestion",
 				method:"GET",
                 headers:{'content-Type':"application/json"},
 			}).then((response)=>{

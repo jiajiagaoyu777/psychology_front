@@ -149,7 +149,7 @@
       },
       doAddScale(){
         this.axios({
-          url:"http://localhost:8080/scale/create",
+          url:"/api/scale/create",
           method:"POST",
           headers:{'content-Type':"application/json"},
           // headers:{'content-Type':"application/x-www-form-urlencoded"},
@@ -179,7 +179,7 @@
     },
     created(){
       this.axios({
-				url:"http://localhost:8080/scale/getAllScale",
+				url:"/api/scale/getAllScale",
 				method:"GET",
         headers:{'content-Type':"application/json"},
 			}).then((response)=>{

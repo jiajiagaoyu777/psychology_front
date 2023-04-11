@@ -117,7 +117,7 @@ export default {
               var patientInfo=JSON.parse(localStorage.getItem("patientInfo")) //取出之前存在缓存中的用户信息,把之前转成字符串的JSON对象再由字符串转回JSON
               
               this.axios({
-                url:"http://localhost:8080/patient/changePwd",
+                url:"/api/patient/changePwd",
                 method:"PUT",
                 headers:{'content-Type':"application/x-www-form-urlencoded"},
                 data:qs.stringify({
