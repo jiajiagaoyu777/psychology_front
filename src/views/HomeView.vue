@@ -20,6 +20,10 @@
           <li>
             <router-link class="btn btn-sm btn-info" to="/register">注册页面</router-link>
           </li>
+		  <li>
+            <router-link class="btn btn-sm btn-info" to="/draft">临时草稿页面</router-link>
+          </li>
+
 					<!-- <li><a class="btn btn-sm btn-info" href="web/404.html">404页面</a></li>
 					<li><a class="btn btn-sm btn-info" href="web/500.html">500页面 </a></li> -->
 				</ul>

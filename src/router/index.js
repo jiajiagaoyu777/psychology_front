@@ -81,6 +81,11 @@ const routes = [
     name: 'questionManage',
     component: () => import('../views/QuestionManageView.vue')
   },
+  {
+    path: '/draft',
+    name: 'draft',
+    component: () => import('../views/DraftView.vue')
+  },
 ]
 
 const router = new VueRouter({
