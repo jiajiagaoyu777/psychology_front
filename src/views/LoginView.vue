@@ -50,7 +50,8 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label"></label>
 						<div class="col-md-8">
-							<input id="btn-login" class="btn btn-primary" type="button" value="登录" @click="clickBtn()"/>
+							<el-button type="primary" @click="clickBtn()">登录</el-button>
+							<!-- <input id="btn-login" class="btn btn-primary" type="button" value="登录" @click="clickBtn()"/> -->
 							<span class="pull-right"><small>还没有账号？</small><router-link to="/register">注册</router-link></span>
 						</div>
 					</div>
@@ -98,7 +99,11 @@ export default {
 			).then((response)=>{
 				console.log(response.data);
 				if(response.data.code==200){
-					alert("登录成功");
+					this.$message({
+          				showClose: true,
+          				message: '管理员登录成功',
+          				type: 'success'
+        			});
 					localStorage.setItem("adminInfo",JSON.stringify(response.data.data))//把登录的用户数据保存到浏览器的f12里的application里的LocalStorage里面
 					
 					this.$router.push('/adminIndex');
